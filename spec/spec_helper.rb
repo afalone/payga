@@ -1,5 +1,8 @@
 ENV['RAILS_ENV'] ||= 'test'
 
+require 'simplecov'
+SimpleCov.start
+
 require File.expand_path("../../payga_test/config/environment.rb", __FILE__)
 require 'rspec/rails'
 require 'factory_girl_rails'

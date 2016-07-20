@@ -7,3 +7,4 @@ payga_test/log/*.log
 payga_test/tmp/
 payga_test/.sass-cache
 .*.swp
+coverage/
