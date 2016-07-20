@@ -1,0 +1,88 @@
+= Payga
+
+This project rocks and uses MIT-LICENSE.
+
+=#Тестовые карты
+В качестве Cardholder name указывать от 2 слов в английской раскладке. / Use two or more words in Roman letters as the name of
+the
+cardholder.
+Для всех карт, вовлеченных в 3d Secure (veres=y, pares=y или a) пароль на ACS: 12345678. / For cards involeved into 3d Secure
+(veres=y,
+pares=y or a) ACS password is 12345678.
+"Заглушка" в самом шлюзе /
+"Stub" in the payment gate:
+pan: 4111 1111 1111 1111
+exp date: 2019/12
+cvv2: 123
+3dsecure: veres=y, pares=y
+pan: 6011 0000 0000 0004
+exp date: 2019/12
+cvv2: 123
+3dsecure: veres=Y pares=A
+pan: 5555 5555 5555 5599
+exp date: 2019/12
+cvv2: 123
+3dsecure: veres=n
+pan: 6390 0200 0000 000003
+exp date: 2019/12
+cvv2: 123(необязательный параметр)
+3dsecure: veres=y, pares=a
+Карты, возвращающие ошибки /
+Cards returning errors:
+pan: 5555 5555 5555 5557
+exp date: 2019/12
+cvv2: 123
+3dsecure: veres=y, pares=u
+Declined. PaRes status is U (-2011)
+pan: 4000 0000 0000 0002
+exp date: 2019/12
+cvv2: 123
+3dsecure: veres=u
+Declined. VeRes status is U (-2016)
+pan: 4444 3333 2222 1111
+exp date: 2019/12
+cvv2: 123
+3dsecure: veres=y, pares=u
+Declined. PaRes status is U (-2011)
+pan: 5555 5555 4444 4442
+exp date: 2019/12
+cvv2: 123
+3dsecure: veres=u
+Declined. VeRes status is U (-2016)
+pan: 4444 4444 4444 4422
+exp date: 2019/12
+cvv2: 123
+Invalid message format (913)
+pan: 4444 4444 1111 1111
+exp date: 2019/12
+cvv2: 123
+Network refused transaction (5)
+pan: 4444 4444 4444 6666
+exp date: 2019/12
+cvv2: 123
+BLOCKED_BY_LIMIT (-20010)
+pan: 4444 4444 4444 4455
+exp date: 2019/12
+cvv2: 123
+Card limitations exceeded (902)
+pan: 4444 4444 9999 9999
+exp date: 2019/12
+cvv2: 123
+TDSEC_COMM_ERROR (151017)
+pan: 4444 4444 4444 3333
+exp date: 2019/12
+cvv2: 123
+Limit exceeded (123)
+pan: 4408 8962 5320 5448
+exp date: 2019/12
+cvv2: 123
+Not enough money (116)
+pan: 4012 8888 8888 1881
+exp date: 2019/12
+cvv2: 123
+RESPONSE_TIMEOUT(151019)
+pan: 4563 9601 2200 1999
+exp date: 2019/12
+cvv2: 123
+CANNOT_SEND_REQUEST(151018)
+

@@ -1,0 +1,9 @@
+.bundle/
+log/*.log
+pkg/
+payga_test/db/*.sqlite3
+payga_test/db/*.sqlite3-journal
+payga_test/log/*.log
+payga_test/tmp/
+payga_test/.sass-cache
+.*.swp
