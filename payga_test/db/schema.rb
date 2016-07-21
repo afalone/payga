@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160720231001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
+
+  create_table "payga_systems", force: :cascade do |t|
+    t.boolean  "default"
+    t.string   "base"
+    t.string   "username"
+    t.string   "password"
+    t.text     "pathes"
+    t.string   "merchant"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "payga_systems", ["default"], name: "index_payga_systems_on_default", using: :btree
+  add_index "payga_systems", ["merchant"], name: "index_payga_systems_on_merchant", using: :btree
 
 end
