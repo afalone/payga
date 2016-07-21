@@ -1,7 +1,8 @@
 class CreatePaygaReceiptSbers < ActiveRecord::Migration
   def change
     create_table :payga_receipts do |t|
-      t.references :payga_request, index: true, polymorphic: true
+      t.references :payga_request, index: true, foreign_key: true
+      t.string :type, index: true
       t.string :order
       t.string :form_url
       t.string :error_code

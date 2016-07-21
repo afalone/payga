@@ -1,5 +1,4 @@
 module Payga
-  class Receipt::Sber < ActiveRecord::Base
-    belongs_to :request
+  class Receipt::Sber < Receipt
   end
 end
