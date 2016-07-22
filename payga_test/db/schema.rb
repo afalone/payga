@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20160721231955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
   create_table "payga_receipts", force: :cascade do |t|
     t.integer  "payga_request_id"

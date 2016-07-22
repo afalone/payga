@@ -11,12 +11,7 @@ module Payga
       rq = request.create amount: howmany, description: desc
       requests << rq
       rq.pay
-      [rq.order, rq.form_url, rq.error_code]
+      [rq.id, rq.form_url, rq.error_code]
     end
-    # mv order, form_url to Request from receipt
-
-    # def receipt
-    #   Receipt::Sber
-    # end
   end
 end
