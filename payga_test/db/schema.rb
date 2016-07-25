@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725000458) do
+ActiveRecord::Schema.define(version: 20160725102321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
   create_table "payga_receipts", force: :cascade do |t|
     t.integer  "payga_request_id"
@@ -43,9 +42,11 @@ ActiveRecord::Schema.define(version: 20160725000458) do
     t.datetime "updated_at",      null: false
     t.string   "order"
     t.string   "form_url"
+    t.string   "state"
   end
 
   add_index "payga_requests", ["payga_system_id"], name: "index_payga_requests_on_payga_system_id", using: :btree
+  add_index "payga_requests", ["state"], name: "index_payga_requests_on_state", using: :btree
   add_index "payga_requests", ["type"], name: "index_payga_requests_on_type", using: :btree
 
   create_table "payga_systems", force: :cascade do |t|

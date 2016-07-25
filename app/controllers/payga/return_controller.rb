@@ -10,6 +10,7 @@ module Payga
       end
       rcpt = pay.receipt.create cmd: 'accept', error_code: 0
       pay.receipts << rcpt
+      pay.update_attributes state: 'accepted'
       render nothing: true, status: :ok
     end
 
@@ -21,6 +22,7 @@ module Payga
       end
       rcpt = pay.receipt.create cmd: 'fail', error_code: 0
       pay.receipts << rcpt
+      pay.update_attributes state: 'failed'
       render nothing: true, status: :ok
     end
   end
