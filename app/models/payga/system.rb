@@ -7,11 +7,21 @@ module Payga
       Request::Sber
     end
 
-    def pay_for howmany, desc
-      rq = request.create amount: howmany, description: desc
+    def pay_for howmany, desc, callback_url = nil
+      rq = request.create amount: howmany, description: desc, callback_url: callback_url
       requests << rq
       rq.pay
       [rq.id, rq.form_url, rq.error_code]
+    end
+
+    def status order
+      rq = request.find(order)
+      rq.state
+    end
+
+    def status_for order
+      rq = request.find(order)
+      rq.status
     end
   end
 end
