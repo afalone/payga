@@ -13,5 +13,15 @@ module Payga
       rq.pay
       [rq.id, rq.form_url, rq.error_code]
     end
+
+    def status order
+      rq = request.find(order)
+      rq.state
+    end
+
+    def status_for order
+      rq = request.find(order)
+      rq.status
+    end
   end
 end
