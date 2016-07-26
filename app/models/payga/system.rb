@@ -11,6 +11,7 @@ module Payga
       rq = request.create amount: howmany, description: desc, callback_url: callback_url
       requests << rq
       rq.pay
+      rq.ping
       [rq.id, rq.form_url, rq.error_code]
     end
 
