@@ -3,7 +3,7 @@ require_dependency "payga/application_controller"
 module Payga
   class ReturnController < ApplicationController
     def ok
-      pay = Payga::Request.where(order: params[:id]).first
+      pay = Payga::Request.where(order: params[:orderId]).first
       unless pay
         render nothing: true, status: 404
         return
@@ -15,7 +15,7 @@ module Payga
     end
 
     def fail
-      pay = Payga::Request.where(order: params[:id]).first
+      pay = Payga::Request.where(order: params[:orderId]).first
       unless pay
         render nothing: true, status: 404
         return
