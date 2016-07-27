@@ -16,6 +16,7 @@ module Payga
       req = Net::HTTP::Post.new(uri.path)
       req.body = {id: id, status: state}.to_query
       begin
+        p req
       res = https.request(req)
       rescue Exception => e
         p e
