@@ -18,7 +18,7 @@ module Payga
       https = Net::HTTP.new(uri.host, uri.port)
       https.use_ssl = self.system.base[0, 6] == 'https:'
       req = Net::HTTP::Post.new(uri.path)
-      req.body = {userName: system.username, password: system.password, orderNumber: id.to_s, amount: (amount * 100).round, returnUrl: ok_return_url(host: hst, port: prt), failUrl: fail_return_url(host: hst, port: prt), description: description, language: 'en'}.to_query.tap{|x| p x }
+      req.body = {userName: system.username, password: system.password, orderNumber: id.to_s, amount: (amount * 100).round, returnUrl: ok_return_index_url(host: hst, port: prt), failUrl: fail_return_index_url(host: hst, port: prt), description: description, language: 'en'}.to_query.tap{|x| p x }
       res = https.request(req)
       hash = MultiJson.load(res.body, symbolize_keys: true)
       update_attributes order: hash[:orderId], form_url: hash[:formUrl]
