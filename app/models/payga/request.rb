@@ -15,7 +15,11 @@ module Payga
       https.use_ssl = self.system.base[0, 6] == 'https:'
       req = Net::HTTP::Post.new(uri.path)
       req.body = {id: id, status: state}.to_query
+      begin
       res = https.request(req)
+      rescue Exception => e
+        p e
+      end
       # hash = MultiJson.load(res.body, symbolize_keys: true)
     end
 
