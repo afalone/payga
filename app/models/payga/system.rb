@@ -9,9 +9,11 @@ module Payga
 
     def pay_for howmany, desc, callback_url = nil
       rq = request.create amount: howmany, description: desc, callback_url: callback_url
+      p rq
       requests << rq
       rq.pay
       rq.ping
+      p rq
       [rq.id, rq.form_url, rq.error_code]
     end
 
