@@ -12,7 +12,7 @@ module Payga
       url = callback_url
       uri = URI(url)
       https = Net::HTTP.new(uri.host, uri.port)
-      https.use_ssl = self.system.base[0, 6] == 'https:'
+      # https.use_ssl = self.system.base[0, 6] == 'https:'
       req = Net::HTTP::Post.new(uri.path)
       req.body = {id: id, status: state}.to_query
       begin
