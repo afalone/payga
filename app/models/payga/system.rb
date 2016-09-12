@@ -7,13 +7,15 @@ module Payga
       Request::Sber
     end
 
-    def pay_for howmany, desc, callback_url = nil
+    def pay_for howmany, desc, options = {}
+      # callback_url = nil
+      callback_url = options[:callback]
+      ok_url = options[:success]
+      fail_url = options[:fail]
       rq = request.create amount: howmany, description: desc, callback_url: callback_url
-      p rq
       requests << rq
       rq.pay
-      rq.ping
-      p rq
+      # rq.ping
       [rq.id, rq.form_url, rq.error_code]
     end
 

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    payga (0.0.7)
+    payga (0.0.13)
       multi_json
       oj
       rails (~> 4.2.6)
@@ -73,7 +73,7 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
-    oj (2.17.1)
+    oj (2.17.4)
     pg (0.18.4)
     pkg-config (1.1.7)
     rack (1.6.4)
@@ -129,7 +129,7 @@ GEM
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.1.1)
+    sprockets-rails (3.2.0)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
