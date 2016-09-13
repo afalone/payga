@@ -12,7 +12,11 @@ module Payga
       pay.receipts << rcpt
       pay.update_attributes state: 'accepted'
       pay.ping
-      render nothing: true, status: :ok
+      if pay.success_url
+        redirect_to pay.success_url
+      else
+        render nothing: true, status: :ok
+      end
     end
 
     def fail
@@ -25,7 +29,11 @@ module Payga
       pay.receipts << rcpt
       pay.update_attributes state: 'failed'
       pay.ping
-      render nothing: true, status: :ok
+      if pay.success_url
+        redirect_to pay.success_url
+      else
+        render nothing: true, status: :ok
+      end
     end
   end
 end

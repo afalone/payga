@@ -4,7 +4,6 @@ module Payga
     has_many :receipts, foreign_key: :payga_request_id
 
     def error_code
-      p receipts.last
       receipts.last.try(:error_code)
     end
 
@@ -16,8 +15,7 @@ module Payga
       req = Net::HTTP::Post.new(uri.path)
       req.body = {id: id, status: state}.to_query
       begin
-        p req
-      res = https.request(req)
+        res = https.request(req)
       rescue Exception => e
         p e
       end

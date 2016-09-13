@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726131943) do
+ActiveRecord::Schema.define(version: 20160913104243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20160726131943) do
     t.string   "form_url"
     t.string   "state"
     t.string   "callback_url"
+    t.string   "success_url"
+    t.string   "fail_url"
   end
 
   add_index "payga_requests", ["payga_system_id"], name: "index_payga_requests_on_payga_system_id", using: :btree

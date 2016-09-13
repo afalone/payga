@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    payga (0.0.13)
+    payga (0.0.14)
       multi_json
       oj
       rails (~> 4.2.6)

@@ -10,9 +10,9 @@ module Payga
     def pay_for howmany, desc, options = {}
       # callback_url = nil
       callback_url = options[:callback]
-      ok_url = options[:success]
+      success_url = options[:success]
       fail_url = options[:fail]
-      rq = request.create amount: howmany, description: desc, callback_url: callback_url
+      rq = request.create amount: howmany, description: desc, callback_url: callback_url, success_url: success_url, fail_url: fail_url
       requests << rq
       rq.pay
       # rq.ping
