@@ -17,7 +17,7 @@ module Payga
       begin
         res = https.request(req)
       rescue Exception => e
-        p e
+        Rails.logger.info e.to_s
       end
       # hash = MultiJson.load(res.body, symbolize_keys: true)
     end
