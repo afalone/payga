@@ -8,3 +8,4 @@ payga_test/tmp/
 payga_test/.sass-cache
 .*.swp
 coverage/
+.gitignore
