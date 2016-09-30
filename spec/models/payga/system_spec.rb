@@ -11,7 +11,10 @@ module Payga
       end
     end 
     describe '#status' do
+      it 'should find request' do
+        # expect
 
+      end
       # let :request, {  }
 
       # it 'should '

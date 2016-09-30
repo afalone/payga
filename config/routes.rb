@@ -1,6 +1,6 @@
 Payga::Engine.routes.draw do
 
-  get 'callback/index'
+  # get 'callback/index'
 
   root to: 'main#show'
   resource :main, only: [:show]
