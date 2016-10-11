@@ -5,7 +5,7 @@ module Payga
     # include Rails.application.routes.url_helpers
 
     def receipt
-      Receipt::Sber
+      Payga::Receipt::Sber
     end
 
     def pay

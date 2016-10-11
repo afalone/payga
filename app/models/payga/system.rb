@@ -4,7 +4,7 @@ module Payga
     has_many :requests, foreign_key: :payga_system_id
 
     def request
-      Request::Sber
+      Payga::Request::Sber
     end
 
     def pay_for howmany, desc, options = {}
