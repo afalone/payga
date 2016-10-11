@@ -30,7 +30,7 @@ module Payga
       pay.update_attributes state: 'failed'
       pay.ping
       if pay.success_url
-        redirect_to pay.success_url
+        redirect_to pay.fail_url
       else
         render nothing: true, status: :ok
       end
