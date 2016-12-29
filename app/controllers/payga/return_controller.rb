@@ -8,6 +8,7 @@ module Payga
         render nothing: true, status: 404
         return
       end
+      Rails.logger.info "[PAYGA] Payga success with #{params.inspect}"
       rcpt = pay.receipt.create cmd: 'accept', error_code: 0
       pay.receipts << rcpt
       pay.update_attributes state: 'accepted'
@@ -25,11 +26,12 @@ module Payga
         render nothing: true, status: 404
         return
       end
+      Rails.logger.info "[PAYGA] Payga failed with #{params.inspect}"
       rcpt = pay.receipt.create cmd: 'fail', error_code: 0
       pay.receipts << rcpt
       pay.update_attributes state: 'failed'
       pay.ping
-      if pay.success_url
+      if pay.fail_url
         redirect_to pay.fail_url
       else
         render nothing: true, status: :ok
